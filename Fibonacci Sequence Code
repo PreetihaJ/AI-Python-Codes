@@ -1,0 +1,30 @@
+#Coded in Jupyter Notebooks
+
+i=1
+k=0
+print(i)
+while(i<1500):
+    j=i + k
+    print(j)
+    k=i
+    i=j
+   
+'''
+Output:- 
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597 '''
