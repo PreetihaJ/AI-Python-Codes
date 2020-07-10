@@ -1,0 +1,20 @@
+#Coded using Jupyter Notebooks 
+
+
+#Accessing multiple elements
+tuple1=(1, 3, 5, 'hello', "sup", 23, 45, "90")
+
+tuple1[1:4]
+
+'''
+Output:
+(3, 5, 'hello')
+'''
+
+#Accessing a single element
+tuple1[6]
+
+'''
+Output:-
+45
+'''
