@@ -1,0 +1,25 @@
+#Coded using Jupyter Notebooks 
+
+#To add an element from one list to another
+list1=[3, 7, 9]
+list2=[4, 3, 6]
+
+list1.append(list2[1])
+
+print(list1)
+
+'''
+Output:- 
+[3, 7, 9, 3]
+'''
+
+
+#To add any element to a list 
+list1.append(6)
+
+print(list1)
+
+'''
+Output:- 
+[3, 7, 9, 3, 6]
+'''
