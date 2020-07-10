@@ -1,0 +1,19 @@
+#Coded in Jupyter Notebooks
+
+
+lists1=[23, 25, -22, -78, 9, -10, 19, -9, -8, 3, 5, 7, -12, -17]
+for i in lists1:
+    if (i>0):
+        print(i)
+        
+        
+'''
+Output:- 
+23
+25
+9
+19
+3
+5
+7
+'''
