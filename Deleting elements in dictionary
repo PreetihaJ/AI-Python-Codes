@@ -1,0 +1,33 @@
+#Coded using Jupyter Notebooks 
+
+
+dic1= {1:"apple", 2:"bannana", 3:"car", 4:"dogs", 5:"eggs", 6:"fence", 7:"gils"}
+
+#Using popitem function 
+print(dic1.popitem())
+print(dic1)
+
+'''
+Output:- 
+(7, 'gils')
+{1: 'apple', 2: 'bannana', 3: 'car', 4: 'dogs', 5: 'eggs', 6: 'fence'}
+'''
+
+#Using pop function
+print(dic1.pop(1))
+print(dic1)
+
+'''
+Output:- 
+apple
+{2: 'bannana', 3: 'car', 4: 'dogs', 5: 'eggs', 6: 'fence', 7: 'gils'}
+'''
+
+#Using the del operation
+del dic1[4]
+print(dic1)
+
+'''
+Output:-
+{1: 'apple', 2: 'bannana', 3: 'car', 5: 'eggs', 6: 'fence', 7: 'gils'}
+'''
