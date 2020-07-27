@@ -1,0 +1,85 @@
+import numpy as np 
+import pandas as pd
+from matplotlib import pyplot as plt 
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+%matplotlib inline
+
+        Output:-
+        
+            7	0	0.1	0.2	0.3	0.4	0.5	0.6	0.7	0.8	...	0.658	0.659	0.660	0.661	0.662	0.663	0.664	0.665	0.666	0.667
+            0	2	0	0	0	0	0	0	0	0	0	...	0	0	0	0	0	0	0	0	0	0
+            1	1	0	0	0	0	0	0	0	0	0	...	0	0	0	0	0	0	0	0	0	0
+            2	0	0	0	0	0	0	0	0	0	0	...	0	0	0	0	0	0	0	0	0	0
+            3	4	0	0	0	0	0	0	0	0	0	...	0	0	0	0	0	0	0	0	0	0
+            4	1	0	0	0	0	0	0	0	0	0	...	0	0	0	0	0	0	0	0	0	0
+            5 rows × 785 columns
+
+data=pd.read_csv(r'C:\Users\Jay\Desktop\mnistx.csv')
+
+data.head()
+
+a=data.iloc[3, 1:].values
+a=a.reshape(28, 28).astype('uint8')
+plt.imshow(a)
+
+
+        Output:- <matplotlib.image.AxesImage at 0x1d4dfe6b448>
+                   (couldn't paste image here)
+        
+        
+df_x=data.iloc[:, 1:]
+df_y=data.iloc[:, 0]
+x_train, x_test, y_train, y_test=train_test_split(df_x, df_y, test_size=0.2, random_state=4)
+
+y_train.head()
+        
+        
+        Output:- 
+                4983    1
+                6789    3
+                2221    3
+                6043    1   
+                1564    0
+                Name: 7, dtype: int64
+        
+rf=RandomForestClassifier(n_estimators=100)
+rf.fit(x_train, y_train)
+
+        
+        Output:- 
+        RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=100,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False)
+
+pred=rf.predict(x_test)
+pred
+        
+        Output:- 
+        
+        array([2, 2, 2, ..., 0, 9, 0], dtype=int64)
+
+s=y_test.values 
+
+count=0
+for i in range(len(pred)):
+    if pred[i]==s[i]:
+        count=count + 1
+    
+count
+
+        Output:- 
+        1890
+
+len(pred)
+
+        Output:- 
+        2000
+        
+accuracy= 1890/2000
+accuracy
